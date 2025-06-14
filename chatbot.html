@@ -1,0 +1,44 @@
+<div id="chatbot">
+  <div id="chatbox"></div>
+  <input type="text" id="userInput" placeholder="Ketik pesan..." />
+</div>
+
+<script>
+  document.getElementById("userInput").addEventListener("keypress", async (e) => {
+    if (e.key === "Enter") {
+      const input = e.target.value;
+      addMessage("Kamu", input);
+      const res = await fetch("https://api.mychatbot.com/message", {
+        method: "POST",
+        body: JSON.stringify({ message: input }),
+        headers: { "Content-Type": "application/json" }
+      });
+      const data = await res.json();
+      addMessage("Bot", data.reply);
+      e.target.value = "";
+    }
+  });
+
+  function addMessage(sender, msg) {
+    const box = document.getElementById("chatbox");
+    box.innerHTML += `<div><b>${sender}:</b> ${msg}</div>`;
+  }
+</script>
+
+<style>
+  #chatbot {
+    width: 300px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-family: sans-serif;
+  }
+  #chatbox {
+    height: 200px;
+    overflow-y: scroll;
+    margin-bottom: 10px;
+  }
+  #userInput {
+    width: 100%;
+    padding: 5px;
+  }
+</style>
