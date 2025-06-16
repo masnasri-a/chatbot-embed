@@ -8,7 +8,7 @@
     chatbotContainer.id = 'chatbot-container';
     document.body.appendChild(chatbotContainer);
 
-    fetch('chat.html')
+    fetch('https://cdn.jsdelivr.net/gh/masnasri-a/chatbot-embed@main/chat.html')
         .then(response => response.text())
         .then(html => {
             chatbotContainer.innerHTML = html;
