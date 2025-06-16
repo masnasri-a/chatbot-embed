@@ -57,6 +57,7 @@
                     })
                 }).catch(error => {
                     console.error('Error sending to webhook:', error);
+                    botReply.innerHTML = `<span style="max-width: 80%;">I apologize, but I'm experiencing technical difficulties at the moment. For detailed assistance and immediate support, please contact our customer service team who will be happy to help you with your inquiry.</span>`;
                 }).then((resp) => {
                     // Append user message and bot reply;
                     let jsonResponse = resp.json();
