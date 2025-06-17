@@ -30,7 +30,7 @@ body {
     bottom: 80px;
     right: 20px;
     width: 360px;
-    max-height: 540px;
+    height: 540px;
     background: white;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -138,4 +138,75 @@ body {
     color: white;
     font-size: 20px;
     cursor: pointer;
+}
+
+.notification-dot {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 12px;
+    height: 12px;
+    background: #ff4444;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+#contact-info {
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px 14px;
+    font-size: 13px;
+    background: rgb(241, 241, 241);
+    color: rgb(68, 68, 68);
+    transition: all 0.8s ease;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    opacity: 1;
+    transform: scale(1);
+}
+
+#contact-person{
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 1;
+    transform: scale(1);
+}
+
+#contact-info.show {
+    display: flex;
+    animation: slideDown 0.3s ease-out;
+}
+
+#contact-info.hide {
+    animation: slideUp 0.3s ease-out forwards;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+        max-height: 0;
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        max-height: 200px;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+        max-height: 200px;
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+        max-height: 0;
+    }
 }

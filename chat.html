@@ -4,21 +4,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chatbot Widget</title>
+  <!-- <link rel="stylesheet" href="chatbot.css"> -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/masnasri-a/chatbot-embed@main/chatbot.css">
 </head>
 <body>
-  <div class="chat-toggle" id="chat-toggle">
+<div class="chat-toggle" id="chat-toggle">
     💬
-  </div>
+    <div class="notification-dot" style="display: none;" id="notification-dot"></div>
+</div>
   <div class="chat-widget hidden" id="chat-widget">
-    <div class="chat-header">
-      <div class="chat-title">💬 Digital Pro Assist <button id="minimize-btn">_</button></div>
-      <div class="status">🟢 Team replies under 1 minute</div>
+    <div class="chat-header" >
+      <div class="chat-title">Digital Pro Assist <button id="contact-person">⋯</button></div>
+    </div>
+    <div id="contact-info" >
+      Contact us:<br>
+      📧    contact@digitalproassist.com<br>
+      📱    +6281234567890
     </div>
     <div class="chat-body" id="chat-body">
       <div class="message bot-message">
-        Someone will be with you shortly. <br />
-        In the meantime feel free to search on Helpdesk or ask me directly.
+        Hi! I'm your assistant, <br />
+        how can I help you today?
       </div>
     </div>
     <div class="chat-input">
@@ -26,6 +32,7 @@
       <button onclick="sendMessage()">➤</button>
     </div>
   </div>
+  <!-- <script src="script.js"></script> -->
   <script src="https://cdn.jsdelivr.net/gh/masnasri-a/chatbot-embed@main/script.js"></script>
 </body>
 </html>

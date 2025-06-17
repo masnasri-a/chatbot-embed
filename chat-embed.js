@@ -1,5 +1,4 @@
 (function () {
-
     const currentScript = document.currentScript;
     const apiKey = currentScript.getAttribute('data-api-key') || 'default';
     console.log(`Chatbot API Key: ${apiKey}`);
